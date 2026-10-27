@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Оксана Бугаева — прототип конструктора</title>
+<link rel="stylesheet" href="scroll-cake.css">
+<link rel="stylesheet" href="sharp-ui.css">
+<style>
+:root{--wine:#9d4058;--ink:#49332f;--paper:#fff9f3;--line:#e5c8cc}*{box-sizing:border-box}body{margin:0;background:#eee8e4;color:var(--ink);font:14px/1.4 system-ui,sans-serif}button,a{touch-action:manipulation}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid #365e96;outline-offset:3px}.toolbar{position:sticky;top:0;z-index:20;background:#fffaf6f5;border-bottom:1px solid var(--line);padding:12px 20px;backdrop-filter:blur(12px)}.topline{display:flex;align-items:center;gap:12px;flex-wrap:wrap;max-width:1440px;margin:auto}.brand{font-weight:650;margin-right:auto}.switch{display:flex;gap:4px;background:#eee2df;padding:4px;border-radius:12px}.switch button,.utility{border:0;padding:8px 12px;border-radius:8px;background:transparent;color:var(--ink)}.switch button[aria-pressed=true]{background:var(--wine);color:white}.utility{border:1px solid var(--line);background:white}.steps{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:10px auto 0;max-width:1440px}.steps button{border:1px solid var(--line);background:white;border-radius:20px;padding:7px 12px;color:var(--ink)}.steps button[aria-current=step]{background:var(--wine);color:white;border-color:var(--wine)}.hint{max-width:1440px;margin:9px auto 0;font-size:12px;color:#74635f}.stage{padding:24px 16px 48px;display:flex;justify-content:center}.desktop{width:min(1341px,100%);box-shadow:0 12px 45px #49332f15}.canvas{position:relative;background:var(--paper)}.canvas img{display:block;width:100%;height:auto}.hotspot{position:absolute;display:block;border:0;background:transparent;border-radius:8px;color:transparent;text-decoration:none;z-index:2;cursor:pointer}.hotspot:hover,.hotspot:focus-visible{background:#9d40581c;box-shadow:inset 0 0 0 2px #9d4058}.show-hotspots .hotspot{background:#9d405820;box-shadow:inset 0 0 0 2px #9d405899}.mobile-frame{width:min(390px,100%);background:var(--paper);border:1px solid #d8bfc1;border-radius:20px;overflow:hidden;box-shadow:0 14px 45px #49332f24;display:flex;flex-direction:column;height:min(844px,calc(100dvh - 205px));min-height:420px}.mobile-scroll{overflow:auto;flex:1;overscroll-behavior:contain;scrollbar-width:thin}.crop{position:relative;overflow:hidden;background:var(--paper)}.crop>img{position:absolute;max-width:none;height:auto;display:block}.mobile-footer{background:#fff9f3;border-top:1px solid var(--line);padding:10px 14px 14px;flex:none}.footer-row{font-size:11px;display:flex;justify-content:space-between;margin-bottom:8px;align-items:center}.footer-row button{border:0;color:var(--wine);background:none;text-decoration:underline}.primary{display:block;width:100%;border:0;border-radius:30px;padding:13px 16px;background:var(--wine);color:white;font-weight:600;font-size:14px}.demo-note{font-size:11px;text-align:center;margin:0 0 8px;color:#74635f}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:60;background:var(--ink);color:white;padding:12px 20px;border-radius:10px;max-width:calc(100% - 24px);box-shadow:0 6px 30px #0002}.toast[hidden]{display:none}dialog{border:1px solid var(--line);border-radius:16px;padding:24px;background:var(--paper);color:var(--ink);max-width:min(600px,calc(100% - 28px));max-height:90dvh;overflow:auto}dialog::backdrop{background:#34232299}dialog h2{font:28px Georgia,serif;margin:0 0 14px}dialog p{line-height:1.6}.dialog-actions{display:flex;gap:10px;flex-wrap:wrap}.dialog-actions>*{flex:1}.summary-text{white-space:pre-wrap;font:14px/1.6 system-ui;background:white;border:1px solid var(--line);padding:16px;border-radius:8px;user-select:text}.zoom-crop{width:min(420px,100%);margin:0 auto 18px}.backlink{display:block;margin-top:14px;color:var(--wine)}@media(max-width:600px){.toolbar{padding:9px 12px}.brand{font-size:13px}.switch button{font-size:12px;padding:7px 8px}.steps{gap:4px}.steps button{font-size:11px;padding:6px 8px}.hint{font-size:11px}.stage{padding:12px 8px 24px}.mobile-frame{height:calc(100dvh - 211px);min-height:360px;border-radius:12px}.utility{font-size:11px;padding:6px 8px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+.site-header{display:flex;justify-content:space-between;align-items:center;padding:24px 5%;gap:20px;background:var(--paper);border-bottom:1px solid var(--line)}.site-brand{border:0;background:none;color:var(--ink);font:34px/1 Georgia,serif;letter-spacing:-1px;text-align:left;padding:0}.site-brand small{display:block;margin-top:8px;font:8px/1.5 system-ui;letter-spacing:2.7px}.site-header nav{display:flex;align-items:center;gap:22px}.site-nav{border:0;background:none;color:var(--ink);padding:8px 0;font-size:13px}.site-contact{border:1px solid var(--wine);border-radius:30px;padding:12px 21px;color:var(--wine);background:none;font-size:13px}.home-motion{border:0;display:block;width:100%;background:var(--paper)}.mobile-home .site-header{flex-wrap:wrap;padding:20px}.mobile-home .site-brand{font-size:29px}.mobile-home .site-header nav{gap:17px;flex-wrap:wrap}.mobile-home .site-contact{padding:9px 13px}@media(max-width:800px){.site-header{flex-wrap:wrap;padding:20px}.site-brand{font-size:29px}.site-header nav{gap:17px;flex-wrap:wrap}.site-contact{padding:9px 13px}}
+body.unified .toolbar,body.unified .site-header,body.unified .sharp-footer{display:none}body.unified{background:#fff9f3}body.unified .stage{padding:0}body.unified .desktop{box-shadow:none;width:100%}
+</style>
+</head>
+<body>
+<header class="toolbar">
+ <div class="topline"><span class="brand">Оксана Бугаева · прототип</span><div class="switch" role="group" aria-label="Версия макетов"><button id="desktopMode" type="button">Компьютер</button><button id="mobileMode" type="button">Телефон</button></div><button class="utility" id="toggleHotspots" aria-pressed="false">Области клика</button><button class="utility" id="help">О прототипе</button></div>
+ <nav class="steps" aria-label="Экраны прототипа" id="stepNav"></nav>
+ <p class="hint">Прототип: интерфейс компьютера выполнен в HTML, мобильные шаги — макеты. Параметры демонстрационные. Данные не отправляются.</p>
+</header>
+<main id="stage" class="stage" aria-label="Макет"></main>
+<div id="toast" class="toast" role="status" hidden></div>
+<dialog id="dialog" aria-labelledby="dialogTitle"><h2 id="dialogTitle"></h2><div id="dialogBody"></div><div class="dialog-actions"><button class="utility" id="closeDialog">Закрыть</button></div></dialog>
+<script src="assets/gsap.min.js"></script>
+<script src="assets/ScrollTrigger.min.js"></script>
+<script src="scroll-cake.js"></script>
+<script src="sharp-ui.js"></script>
+<script>
+'use strict';
+const unified=new URLSearchParams(location.search).get('unified')==='1';
+const screens=['home','size','filling','design','date','success'];
+const names={home:'Главная',size:'1. Размер',filling:'2. Начинка',design:'3. Оформление',date:'4. Дата',success:'Заявка отправлена'};
+const base='assets/';
+const summary='Пример заявки — конструктор торта Оксаны Бугаевой\n\nТорт с бантом\nРазмер: 2 яруса · 4 кг · 20 гостей\nНачинка: ваниль — малина (пример для согласования)\nОформление: пудровый крем, бант из органзы\nДекор: жемчужины, зайчик\nНадпись: One\nДата: 14 ноября 2026\nПолучение: самовывоз\nПожелания: первый день рождения. Нежный розовый оттенок, надпись One.\n\nДемонстрационная заявка. Дата, стоимость и возможность изготовления требуют подтверждения Оксаны. Ничего не отправлено.';
+let mode=innerWidth<650?'mobile':'desktop',current='home',shown=false,toastTimer,storyInstance;
+const stage=document.getElementById('stage'),dialog=document.getElementById('dialog');
+function tell(message){clearTimeout(toastTimer);const t=document.getElementById('toast');t.textContent=message;t.hidden=false;toastTimer=setTimeout(()=>t.hidden=true,4200)}
+function modal(title,content){document.getElementById('dialogTitle').textContent=title;const b=document.getElementById('dialogBody');b.replaceChildren();if(typeof content==='string'){const p=document.createElement('p');p.textContent=content;b.append(p)}else b.append(content);if(!dialog.open)dialog.showModal()}
+function route(screen,newMode=mode){if(unified&&screen==='home'){parent.postMessage({type:'cake-home'},'*');return;}if(!screens.includes(screen))return;const hash='#'+newMode+'/'+screen;if(location.hash===hash)render();else location.hash=hash}
+function readRoute(){const [m,s]=location.hash.slice(1).split('/');if(['desktop','mobile'].includes(m))mode=m;if(screens.includes(s))current=s;render()}
+function button(label,action,classes='utility'){const b=document.createElement('button');b.type='button';b.className=classes;b.textContent=label;b.addEventListener('click',action);return b}
+function crop(src,x,y,w,h,totalW){const el=document.createElement('div');el.className='crop canvas';el.style.aspectRatio=w+'/'+h;const img=document.createElement('img');img.src=base+src;img.alt='Макет: '+names[current];img.style.width=100*totalW/w+'%';img.style.left=-100*x/w+'%';img.style.top=-100*y/h+'%';img.draggable=false;el.append(img);return el}
+function hotspot(el,x,y,w,h,totalW,totalH,label,action){const b=button(label,action,'hotspot');b.setAttribute('aria-label',label);b.title=label;b.style.left=x/totalW*100+'%';b.style.top=y/totalH*100+'%';b.style.width=w/totalW*100+'%';b.style.height=h/totalH*100+'%';el.append(b);return b}
+function external(service){modal('Открыть '+service+'?',service==='Telegram'?'В рабочем сайте эта кнопка ведёт к диалогу с Оксаной. В локальном прототипе внешняя отправка отключена. Скопируйте пример заявки, чтобы проверить её состав.':'Внешние ссылки здесь показаны для примера. Прототип не публикует и не отправляет данные.')}
+function copy(){if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(summary).then(()=>tell('Пример заявки скопирован. Ничего не отправлено.')).catch(showCopyFallback)}else showCopyFallback()}
+function showCopyFallback(){const pre=document.createElement('pre');pre.className='summary-text';pre.textContent=summary;modal('Скопируйте пример заявки',pre);const range=document.createRange();range.selectNodeContents(pre);const sel=window.getSelection();sel.removeAllRanges();sel.addRange(range)}
+function showSummary(){const pre=document.createElement('pre');pre.className='summary-text';pre.textContent=summary;const wrap=document.createElement('div');wrap.append(pre,button('Скопировать заявку',copy,'primary'));modal('Ваш выбор · пример',wrap)}
+function zoom(){const wrap=document.createElement('div');const img=document.createElement('img');img.src='assets/bow-cutout.png';img.alt='Торт с бантом и зайчиком';img.style.cssText='display:block;width:100%;max-width:420px;max-height:65vh;object-fit:contain;margin:auto';wrap.append(img);const p=document.createElement('p');p.textContent='Визуальный ориентир из макета. Детали согласуем с Оксаной.';wrap.append(p);modal('Торт с бантом',wrap)}
+function demo(){modal('Визуальная настройка', 'Это прототип из готовых макетов. Цвета, декор и данные показаны как пример и пока не меняются. Для проверки сценария используйте кнопки «Далее», «Назад» и навигацию над макетом.')}
+const sharpUI=createSharpUI({button,route,crop,demo,copy,external,showSummary});
+function homeScreen(){
+ const container=document.createElement('div');container.className='desktop home-site'+(mode==='mobile'?' mobile-home':'');
+ const header=document.createElement('header');header.className='site-header';const wordmark=button('Оксана Бугаева',()=>route('home'),'site-brand');const subtitle=document.createElement('small');subtitle.textContent='АВТОРСКИЕ ТОРТЫ · ЭЛИСТА';wordmark.append(subtitle);header.append(wordmark);
+ const nav=document.createElement('nav');nav.setAttribute('aria-label','Навигация главной страницы');header.append(nav);
+ const tail=sharpUI.homeContent();
+ function scrollToSection(y){const selector=y===0?'#cake-works':y===460?'#cake-author':'#cake-order';const target=tail.querySelector(selector);window.scrollTo({top:window.scrollY+target.getBoundingClientRect().top-document.querySelector('.toolbar').offsetHeight-12,behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'instant':'smooth'})}
+ nav.append(button('Торты',()=>scrollToSection(0),'site-nav'),button('Начинка',()=>{const target=storyInstance?.element;if(target)window.scrollTo({top:scrollY+target.getBoundingClientRect().top-document.querySelector('.toolbar').offsetHeight,behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'instant':'smooth'})},'site-nav'),button('Об Оксане',()=>scrollToSection(460),'site-nav'),button('Как заказать',()=>scrollToSection(783),'site-nav'),button('Обсудить торт',()=>route('size'),'site-contact'));
+ const frame=document.createElement('iframe');frame.id='homeMotion';frame.title='Первый экран: торты Оксаны в движении';frame.src='motion.html?embedded=1';frame.className='home-motion';frame.style.height=mode==='mobile'||innerWidth<820?'830px':'760px';
+ storyInstance=createCakeStory(document.querySelector('.toolbar'));
+ container.append(header,frame,storyInstance.element,tail);return container;
+}
+addEventListener('message',event=>{const frame=document.getElementById('homeMotion');if(!frame||event.source!==frame.contentWindow)return;const data=event.data;if(data?.type==='cake-hero-height'&&Number.isFinite(data.height)&&data.height>=400&&data.height<=1400)frame.style.height=data.height+'px';if(data?.type==='cake-builder-open')route('size')});
+function desktopScreen(){return current==='home'?homeScreen():sharpUI.screen(current)}
+function mobileScreen(){if(current==='home'){const wrap=homeScreen();wrap.style.maxWidth='500px';return wrap}
+ const frame=document.createElement('div');frame.className='mobile-frame';frame.setAttribute('aria-label','Мобильный макет: '+names[current]);const scroll=document.createElement('div');scroll.className='mobile-scroll';frame.append(scroll);
+ if(current==='design'){
+  const first=crop('mobile-design.png',25,83,427,1418,921),second=crop('mobile-design.png',474,536,426,965,921);scroll.append(first,second);
+  hotspot(first,20,112,200,48,427,1418,'Назад: начинка',()=>route('filling'));
+  hotspot(first,24,318,380,540,427,1418,'Увеличить торт',zoom);
+  hotspot(first,22,916,384,490,427,1418,'Параметры оформления: фиксированный пример',demo);
+  hotspot(second,20,0,386,955,426,965,'Параметры оформления: фиксированный пример',demo);
+ }else{
+  const end={size:1655,filling:1650,date:1645,success:1774}[current];const el=crop('mobile-'+current+'.png',0,0,887,end,887);scroll.append(el);
+  if(current==='success'){
+   hotspot(el,124,1513,643,69,887,end,'Скопировать пример заявки',copy);hotspot(el,124,1588,643,69,887,end,'Написать в Telegram — демонстрация',()=>external('Telegram'));hotspot(el,378,1665,140,43,887,end,'На главную',()=>route('home'));
+  }else{
+   const back={size:'home',filling:'size',date:'design'};
+   hotspot(el,75,111,500,50,887,end,'Назад: '+names[back[current]],()=>route(back[current]));
+   if(current==='size')hotspot(el,102,390,684,397,887,end,'Увеличить торт',zoom);
+   if(current==='filling')hotspot(el,65,359,757,354,887,end,'Посмотреть пример начинки',()=>modal('Начинка — пример','Ванильный бисквит, крем и ягодная прослойка. Реальный состав и наличие нужно согласовать с Оксаной.'));
+   if(current==='date')hotspot(el,146,385,598,207,887,end,'Увеличить торт',zoom);
+   const y={size:844,filling:878,date:615}[current];hotspot(el,75,y,737,end-y-15,887,end,'Поля макета: фиксированный пример',demo);
+  }
+ }
+ if(current!=='success'){
+  const footer=document.createElement('div');footer.className='mobile-footer';const row=document.createElement('div');row.className='footer-row';const label=document.createElement('span');label.textContent=current==='date'?'Заявка для обсуждения':'Ваш выбор';row.append(label,button('Посмотреть',showSummary,''));footer.append(row);
+  const next={size:'filling',filling:'design',design:'date',date:'success'};const cta={size:'Далее: начинка →',filling:'Далее: оформление →',design:'Далее: дата и пожелания →',date:'Отправить заявку Оксане →'};
+  footer.append(button(cta[current],()=>{const isSend=current==='date';route(next[current]);if(isSend)tell('Демонстрация: заявка никуда не отправлена.')},'primary'));frame.append(footer);
+ }
+ return frame;
+}
+function render(){
+ storyInstance?.destroy();storyInstance=null;
+ document.getElementById('desktopMode').setAttribute('aria-pressed',String(mode==='desktop'));document.getElementById('mobileMode').setAttribute('aria-pressed',String(mode==='mobile'));
+ const nav=document.getElementById('stepNav');nav.replaceChildren();screens.forEach(s=>{const b=button(names[s],()=>route(s),'');if(current===s)b.setAttribute('aria-current','step');nav.append(b)});
+ stage.replaceChildren(mode==='mobile'?mobileScreen():desktopScreen());document.title=names[current]+' · Прототип Оксаны Бугаевой';window.scrollTo(0,0);storyInstance?.init();
+}
+document.getElementById('desktopMode').onclick=()=>route(current,'desktop');document.getElementById('mobileMode').onclick=()=>route(current,'mobile');
+document.getElementById('toggleHotspots').onclick=()=>{shown=!shown;document.body.classList.toggle('show-hotspots',shown);document.getElementById('toggleHotspots').setAttribute('aria-pressed',String(shown))};
+document.getElementById('closeDialog').onclick=()=>dialog.close();dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close()}});
+document.getElementById('help').onclick=()=>modal('Как пользоваться прототипом','Нажимайте «Далее» и «Назад» на макетах или выбирайте шаги в верхней панели. «Области клика» подсвечивает активные переходы. Переключатель «Телефон / Компьютер» сохраняет текущий шаг. Главная и компьютерные шаги теперь используют HTML-текст и элементы интерфейса. Мобильные шаги остаются макетами. На телефоне прокручивайте содержимое внутри рамки. Настройки и контактные поля — фиксированные изображения. Дата и начинка демонстрационные; отправка, оплата и внешние сообщения отключены. Копирование заявки работает локально; если браузер ограничил буфер обмена, появится текст для ручного копирования.');
+if(unified){document.body.classList.add('unified');const report=()=>parent.postMessage({type:'cake-content-height',height:Math.ceil(stage.getBoundingClientRect().height)},'*');new ResizeObserver(report).observe(stage);addEventListener('load',report)}
+addEventListener('hashchange',readRoute);readRoute();
+</script>
+</body>
+</html>
